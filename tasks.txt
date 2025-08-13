@@ -1,0 +1,6 @@
+# To-Do App Tasks File
+# Format: id|description|priority|completed|createdAt|completedAt|tags
+
+7|task22|LOW|false|2025-08-13T14:51:38.197759|NULL|a,b,a,,a
+9|task2|MEDIUM|false|2025-08-13T16:38:37.678935|NULL|
+10|task3|MEDIUM|false|2025-08-13T16:38:55.490279|NULL|
