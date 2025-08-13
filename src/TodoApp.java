@@ -66,6 +66,7 @@ public class TodoApp {
             case "list" -> handleList(parts);
             case "done" -> handleDone(parts);
             case "delete" -> handleDelete(parts);
+            case "help" -> showHelp();
             case "exit", "quit" -> {
                 System.out.println("Goodbye!");
                 running = false;
@@ -203,5 +204,31 @@ public class TodoApp {
         };
     }
 
-
+    private void showHelp() {
+        System.out.println("""
+            
+            Available Commands:
+            ──────────────────────────────────────────────────────────
+            
+            add "description" [options]    Add a new task
+              --priority high|medium|low   Set task priority (default: medium)
+              --tags tag1,tag2            Add tags to task
+              
+            list [options]                 List all tasks
+              --filter completed|pending   Filter tasks by status
+              --sort priority|date|name    Sort tasks (default: date)
+              
+            done <id>                      Mark task as completed
+            delete <id>                    Delete a task
+            help                          Show this help message
+            exit                          Quit the application
+            
+            Examples:
+            ──────────────────────────────────────────────────────────
+            add "Buy groceries" --priority high --tags shopping,food
+            list --filter pending --sort priority
+            done 3
+            delete 5
+            """);
+    }
 }
