@@ -216,7 +216,6 @@ public class TodoApp {
               
             list [options]                 List all tasks
               --filter completed|pending   Filter tasks by status
-              --sort priority|date|name    Sort tasks (default: date)
               
             done <id>                      Mark task as completed
             delete <id>                    Delete a task
@@ -225,10 +224,11 @@ public class TodoApp {
             
             Examples:
             ──────────────────────────────────────────────────────────
-            add "Buy groceries" --priority high --tags shopping,food
-            list --filter pending --sort priority
+            add "Buy milk" --priority high --tags shopping,food
+            list --filter pending
             done 3
             delete 5
-            """);
+            """
+        );
     }
 }
