@@ -5,17 +5,15 @@ import java.util.ArrayList;
 public class TodoService {
     private final TaskStorage storage;
     private final List<Task> tasks;
-    private int nextId;
 
     public TodoService() {
         this.storage = new TaskStorage();
         this.tasks = new ArrayList<>(storage.loadTasks());
-        this.nextId = calculateNextId();
     }
 
     public Task addTask(String description, Priority priority, String[] tags) {
 
-        Task task = Task.create(nextId++, description, priority, tags);
+        Task task = Task.create(calculateNextId(), description, priority, tags);
         tasks.add(task);
         saveToStorage();
         return task;
