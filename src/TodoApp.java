@@ -48,7 +48,7 @@ public class TodoApp {
     }
 
     private void processCommand(String input) {
-        String[] parts = input.split("\\s+", 2);
+        String[] parts = input.split("\\s+");
         if( parts.length == 0) {
             System.out.println("No command entered. Type 'help' for available commands.");
             return;
